@@ -8,7 +8,7 @@ get_header()
 
 ?>
 
-<div class="ym-column">
+<div class="ym-column linearize-level-1">
 
 <?php
 

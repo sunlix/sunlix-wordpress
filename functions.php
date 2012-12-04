@@ -45,7 +45,7 @@ add_action("init", "sxRemoveOverhead");
 
 function sxRemoveCategoryRel ($output)
 {
-  $output = str_replace(' rel="category tag"', '', $output);
+  $output = str_replace(' rel="category"', '', $output);
   return $output;
 }
 add_filter('wp_list_categories', 'sxRemoveCategoryRel');
@@ -116,14 +116,27 @@ function sxPaging()
 
 function sxNextPage()
 {
-	return 'class="ym-button"';
+	return 'class="ym-button" rel="prev"';
 }
 function sxPreviousPage()
 {
-	return 'class="ym-button ym-gr"';
+	return 'class="ym-button float-right" rel="next"';
 }
 add_filter('next_posts_link_attributes', 'sxNextPage');
 add_filter('previous_posts_link_attributes', 'sxPreviousPage');
+
+/**
+ * filter for cleaner previous_post_link an next_post_link
+ */
+
+function sxAdjacentPostLink ($output)
+{
+	$previous = str_replace('rel="prev"', 'class="ym-button" rel="prev"', $output);
+	$next = str_replace('rel="next"', 'class="ym-button float-right" rel="next"', $output);
+	return strpos($output,'prev') !== false ? $previous : $next;
+}
+add_filter("previous_post_link", "sxAdjacentPostLink");
+add_filter("next_post_link", "sxAdjacentPostLink");
 
 /**
  * add the read more link to the excerpt
@@ -132,7 +145,7 @@ add_filter('previous_posts_link_attributes', 'sxPreviousPage');
 function sxExcerptMore()
 {
 	global $post;
-	return ' <a href="'. get_permalink($post->ID) . '" class="ym-button ym-next ym-gr">'. sprintf(__('Read article %1$s', 'sunlix'), '<span class="ym-hideme">&bdquo;'. get_the_title() .'&ldquo;</span>') .'</a>';
+	return ' <a href="'. get_permalink($post->ID) . '" class="ym-button ym-next float-right">'. sprintf(__('Read article %1$s', 'sunlix'), '<span class="ym-hideme">&bdquo;'. get_the_title() .'&ldquo;</span>') .'</a>';
 }
 add_filter('excerpt_more', 'sxExcerptMore');
 
@@ -172,7 +185,7 @@ function sxComment ($comment)
 					$avatar_size = 68;
 				}
 
-				echo '<p class="ym-gl">'. get_avatar( $comment, $avatar_size ) ."</p>";
+				echo '<p class="float-left">'. get_avatar( $comment, $avatar_size ) ."</p>";
 
 ?>
 

@@ -16,7 +16,7 @@ if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()) :
 
 	<?php get_search_form() ?>
 
-	<section class="categories">
+	<section class="ym-contain-oh categories">
 		<header>
 			<h3><?php _e("Categories") ?></h3>
 		</header>
@@ -24,7 +24,7 @@ if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()) :
 			<?php wp_list_cats() ?>
 		</ul>
 	</section>
-	<section class="archives">
+	<section class="ym-contain-oh archives">
 		<header>
 			<h3><?php _e("Archives") ?></h3>
 		</header>
@@ -32,7 +32,7 @@ if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()) :
 			<?php wp_get_archives("type=yearly") ?>
 		</ul>
 	</section>
-	<section class="bookmarks">
+	<section class="ym-contain-oh blogroll">
 		<header>
 			<h3><?php _e("Worth reading links", 'sunlix') ?></h3>
 		</header>

@@ -8,10 +8,10 @@ if (is_single()) :
 
 ?>
 
-<nav class="ym-contain-dt">
+<nav class="ym-contain-dt no-margin">
 	<h4 class="ym-hideme"><?php _e('Article navigation', 'sunlix'); ?></h4>
-	<span class="sx-button"><?php previous_post_link("%link", "&larr; %title"); ?></span>
-	<span class="sx-button ym-gr"><?php next_post_link("%link", "%title &rarr;"); ?></span>
+	<?php previous_post_link("%link", "&larr; %title"); ?>
+	<?php next_post_link("%link", "%title &rarr;"); ?>
 </nav>
 
 <?php
@@ -50,7 +50,7 @@ endif
 ?>
 
 	</header>
-	<div class="ym-contain-oh entry">
+	<div class="ym-contain-dt entry">
 
 <?php
 
@@ -77,18 +77,20 @@ if (!is_page()) :
 ?>
 
 	<footer>
-		<p>
+		<div class="ym-contain-dt author">
+			<small>
 
-		<?php
+			<?php
 
-			printf(__('Published by %1$s on %2$s in %3$s', 'sunlix'),
-				'<a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'))) .'" title="'. esc_attr(sprintf(__('View all articles by %1$s', 'sunlix'), get_the_author())) .'">'. get_the_author() .'</a>',
-				esc_html(get_the_time(get_option("date_format"))),
-				get_the_category_list(", ")
-			);
+				printf(__('Published by %1$s on %2$s in %3$s', 'sunlix'),
+					'<a href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'))) .'" title="'. esc_attr(sprintf(__('View all articles by %1$s', 'sunlix'), get_the_author())) .'">'. get_the_author() .'</a>',
+					esc_html(get_the_time(get_option("date_format"))),
+					get_the_category_list(", ")
+				);
 
-			?>
-		</p>
+				?>
+			</small>
+		</div>
 		<p class="ym-contain-dt social">
 			<a class="btn comment" href="<?php comments_link() ?>" title="<?php printf(__('Comment the article %1$s', 'sunlix'), '&bdquo;'. get_the_title() .'&ldquo;') ?>">
 				<span>
@@ -123,8 +125,8 @@ if (is_single()) :
 
 <nav class="ym-contain-dt">
 	<h4 class="ym-hideme"><?php _e('Article navigation', 'sunlix'); ?></h4>
-	<span class="sx-button"><?php previous_post_link("%link", "&larr; %title"); ?></span>
-	<span class="sx-button ym-gr"><?php next_post_link("%link", "%title &rarr;"); ?></span>
+	<?php previous_post_link("%link", "&larr; %title"); ?>
+	<?php next_post_link("%link", "%title &rarr;"); ?>
 </nav>
 
 <?php
