@@ -2,15 +2,15 @@
 # This file is distributed under the CC-BY 2.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: sunlix 0.6\n"
+"Project-Id-Version: sunlix 0.8\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/sunlix\n"
-"POT-Creation-Date: 2012-02-29 17:40:09+00:00\n"
+"POT-Creation-Date: 2012-12-06 19:49:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Sven Schüring <ssch@zenmotion.de>\n"
+"Language-Team: German <ssch@zenmotion.de>\n"
 
 #: archive.php:33 archive.php:35 archive.php:37
 msgid "All archived articles from %1$s"
@@ -26,11 +26,6 @@ msgstr ""
 
 #: category.php:28
 msgid "All articles in category %1$s"
-msgstr ""
-
-#: comments.php:11
-msgid ""
-"This post is password protected. Enter the password to view any comments."
 msgstr ""
 
 #: comments.php:32
@@ -49,28 +44,32 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: content.php:12 content.php:125 functions.php:105
+#: content.php:12 content.php:127 functions.php:105
 msgid "Article navigation"
 msgstr ""
 
-#: content.php:43 functions.php:135
+#: content.php:43 functions.php:148
 msgid "Read article %1$s"
 msgstr ""
 
-#: content.php:84
+#: content.php:85
 msgid "Published by %1$s on %2$s in %3$s"
 msgstr ""
 
-#: content.php:85
+#: content.php:86
 msgid "View all articles by %1$s"
 msgstr ""
 
-#: content.php:93
+#: content.php:95
 msgid "Comment the article %1$s"
 msgstr ""
 
-#: footer.php:4
+#: footer.php:5
 msgid "Meta navigation"
+msgstr ""
+
+#: functions.php:61
+msgid "Main navigation"
 msgstr ""
 
 #: functions.php:106
@@ -81,16 +80,8 @@ msgstr ""
 msgid "Newer articles"
 msgstr ""
 
-#: functions.php:183
+#: functions.php:196
 msgid "%1$s wrote on %2$s at %3$s o'clock"
-msgstr ""
-
-#: functions.php:190
-msgid "Your comment is awaiting moderation"
-msgstr ""
-
-#: functions.php:241 sidebar.php:37
-msgid "Worth reading links"
 msgstr ""
 
 #: header.php:22
@@ -98,11 +89,15 @@ msgid "Skip to main navigation"
 msgstr ""
 
 #: header.php:23
+msgid "Skip to meta navigation"
+msgstr ""
+
+#: header.php:24
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:32
-msgid "Main navigation"
+#: header.php:42
+msgid "To top"
 msgstr ""
 
 #: search.php:28
