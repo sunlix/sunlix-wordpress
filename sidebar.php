@@ -32,12 +32,6 @@ if (!function_exists('dynamic_sidebar') || !dynamic_sidebar()) :
 			<?php wp_get_archives("type=yearly") ?>
 		</ul>
 	</section>
-	<section class="ym-contain-oh blogroll">
-		<header>
-			<h3><?php _e("Worth reading links", 'sunlix') ?></h3>
-		</header>
-			<?php wp_list_bookmarks("title_li=&category_before=&category_after=&title_before=<h4>&title_after=</h4>") ?>
-	</section>
 
 <?php
 

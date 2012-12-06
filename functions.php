@@ -11,15 +11,8 @@
 function sxI18n()
 {
 	load_theme_textdomain( 'sunlix', get_template_directory() . '/languages' );
-
-		$locale = get_locale();
-		$locale_file = get_template_directory() . "/languages/$locale.php";
-		if ( is_readable( $locale_file ))
-		{
-			require_once( $locale_file );
-		}
 }
-add_action("init", "sxI18n");
+add_action("after_setup_theme", "sxI18n");
 
 /**
  * clean up the <head>
@@ -58,8 +51,8 @@ add_filter('the_category', 'sxRemoveCategoryRel');
 function sxRegisterMenus ()
 {
 	register_nav_menus(array(
-		"nav-main" => __("Main Navigation", 'sunlix'),
-		"nav-meta" => __("Meta Navigation", 'sunlix')
+		"nav-main" => __("Main navigation", 'sunlix'),
+		"nav-meta" => __("Meta navigation", 'sunlix')
 	));
 }
 add_action("init", "sxRegisterMenus");
@@ -200,7 +193,7 @@ function sxComment ($comment)
 						)
 
 ?>
-						<?php if ( $comment->comment_approved == '0' ) : ?>// <em class="warning"><?php _e("Your comment is awaiting moderation", 'sunlix') ?></em><?php endif; ?>
+						<?php if ( $comment->comment_approved == '0' ) : ?>// <em class="warning"><?php _e("Your comment is awaiting moderation") ?></em><?php endif; ?>
 					</h5>
 				</header>
 				<blockquote>
@@ -242,18 +235,6 @@ function sxCategoryWidget()
 		<ul>
 			<?php wp_list_cats() ?>
 		</ul>
-	</section>
-<?php
-}
-
-function sxBookmarkWidget()
-{
-?>
-	<section class="bookmarks">
-		<header>
-			<h3><?php _e("Worth reading links", 'sunlix') ?></h3>
-		</header>
-			<?php wp_list_bookmarks("title_li=&category_before=&category_after=&title_before=<h4>&title_after=</h4>") ?>
 	</section>
 <?php
 }
