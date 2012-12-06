@@ -39,7 +39,7 @@
 						'depth'				=> 1
 					));
 				?>
-				<a href="#main" id="top"><?php _("To top", "sunlix") ?></a>
+				<a href="#main" id="top"><?php _e("To top", "sunlix") ?></a>
 			</div>
 		</nav>
 		<div id="main" class="ym-wrapper ym-clearfix">
